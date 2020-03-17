@@ -8,8 +8,9 @@ function computerPlay () {
     computerResult = computerArray[Math.floor(Math.random()*computerArray.length)];
 }
 
-function playerPlay () {
-    playerResult = prompt('Let\'s play rock paper scissors! Type in your selection', '');
+function playerPlay (playerChoice) {
+    playerChoice = prompt('Let\'s play rock paper scissors! Type in your selection', '');
+    playerResult = playerChoice;
     playerResult = playerResult.toUpperCase();
 }
 
@@ -57,6 +58,12 @@ function playRound () {
 
 }
 
+function singleRound () {
+    playRound();
+    computerScore = 0;
+    playerScore = 0;
+}
+
 function game() {
     playRound();
     playRound();
@@ -73,5 +80,8 @@ function game() {
     }
     else {
         alert(`Looks like it's a draw! CPU won ${computerScore} times and you won ${playerScore} times`)
-    }
+    };
+
+    playerScore = 0;
+    computerScore = 0;
 }
