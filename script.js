@@ -60,8 +60,17 @@ function playRound () {
 
 function singleRound () {
     playRound();
-    computerScore = 0;
-    playerScore = 0;
+    if (computerScore === 5) {
+        alert(`CPU wins this time! CPU won ${computerScore} times and you won ${playerScore} times`);
+        computerScore = 0;
+        playerScore = 0;
+    }
+    else if (playerScore === 5) {
+        alert(`You win this time! CPU won ${computerScore} times and you won ${playerScore} times`);
+        computerScore = 0;
+        playerScore = 0;
+    }
+    
 }
 
 function game() {
